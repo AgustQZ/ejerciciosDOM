@@ -51,6 +51,7 @@ img {
   max-width: var(--container-width);
   min-height: 100vh;
   text-align: center;
+  border: solid 1px var(--second-color);
 }
 
 .panel {

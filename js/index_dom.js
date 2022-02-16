@@ -5,5 +5,6 @@ const d = document;
 // para hacer que la carga de la funcion se haga al documento correctamente
 d.addEventListener("DOMContentLoaded", e => {
     hamburgerMenu(".panel-btn", ".panel", ".menu a");
-    digitalCLock("#reloj", "#activar-reloj", "#detener-reloj");
+    digitalCLock("#reloj", "#activar-reloj", "#desactivar-reloj");
+    alarm("assets/alarm.mp3", "#activar-alarma", "#desactivar-alarma");
 });
