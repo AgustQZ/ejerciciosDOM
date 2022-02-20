@@ -114,3 +114,65 @@ img {
     color: var(--second-color);
     background-color: var(--main-modal-color);
 }
+.stage{
+  display: flex;
+  min-height: 50vh;
+  background-color: var(--second-color);
+}
+.ball{
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  margin: auto;
+}
+/* boton para volver al inicio */
+.scroll-top{
+  position: fixed;
+  z-index: 9;
+  bottom: 2vh;
+  right: calc(4.25rem + 1vh);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--second-color);
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  font-size: 2rem;
+  transition: all 0.3s ease-out;
+}
+.scroll-top:hover{
+  background-color: var(--second-color);
+  color: var(--main-color);
+}
+.hidden{
+  visibility: hidden;
+  opacity: 0;
+}
+/* tema oscuro */
+.dark-theme{
+  position: fixed;
+  z-index: 9;
+  bottom: 2vh;
+  left: calc(1vw);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--second-color);
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  font-size: 2rem;
+  transition: all 0.3s ease-out;
+}
+.dark-theme:hover{
+  background-color: var(--second-color);
+  color: var(--main-color);
+}
+.dark-mode{
+  background-color: var(--second-color);
+  color: var(--main-color);
+}
