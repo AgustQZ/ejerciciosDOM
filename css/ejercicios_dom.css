@@ -76,7 +76,7 @@ img {
 }
 
 /*********** boton hamburguesa */
-.panel-btn {
+button.panel-btn {
   position: fixed;
   z-index: 9;
   bottom: 1vh;
@@ -88,7 +88,10 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--main-color);
+  background-color:var(--main-color);
+}
+button.panel-btn:hover{
+  background-color: gray;
 }
 
 /*********** menu */
@@ -112,7 +115,7 @@ img {
 .menu a:hover{
     font-weight: bold;
     color: var(--second-color);
-    background-color: var(--main-modal-color);
+    background-color: var(--main-color);
 }
 .stage{
   display: flex;
@@ -130,13 +133,13 @@ img {
 .scroll-top{
   position: fixed;
   z-index: 9;
-  bottom: 2vh;
+  bottom: 1vh;
   right: calc(4.25rem + 1vh);
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  background-color: transparent;
-  color: var(--second-color);
+  background-color: var(--main-color);
+  color: black;
   cursor: pointer;
   outline: 0;
   border: 0;
@@ -144,8 +147,7 @@ img {
   transition: all 0.3s ease-out;
 }
 .scroll-top:hover{
-  background-color: var(--second-color);
-  color: var(--main-color);
+  background-color: gray;
 }
 .hidden{
   visibility: hidden;
@@ -155,13 +157,13 @@ img {
 .dark-theme{
   position: fixed;
   z-index: 9;
-  bottom: 2vh;
+  bottom: 1vh;
   left: calc(1vw);
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  background-color: transparent;
-  color: var(--second-color);
+  background-color: var(--main-color);
+  color: black;
   cursor: pointer;
   outline: 0;
   border: 0;
@@ -169,10 +171,9 @@ img {
   transition: all 0.3s ease-out;
 }
 .dark-theme:hover{
-  background-color: var(--second-color);
-  color: var(--main-color);
+  background-color: gray;
 }
 .dark-mode{
-  background-color: var(--second-color);
-  color: var(--main-color);
+  background-color: black;
+  color: white;
 }
