@@ -1,73 +1,74 @@
 /*********** reset */
 :root {
-  --main-font: sans-serif;
-  --font-size: 16px;
-  --main-color: #f7df1e;
-  --second-color: #222;
-  --main-modal-color: rgba(247, 222, 30, 0.85);
-  --second-modal-color: rgba(34, 34, 34, 0.85);
-  --container-width: 1200px;
+    --main-font: sans-serif;
+    --font-size: 16px;
+    --main-color: #f7df1e;
+    --second-color: #222;
+    --main-modal-color: rgba(247, 222, 30, 0.85);
+    --second-modal-color: rgba(34, 34, 34, 0.85);
+    --container-width: 1200px;
 }
 html {
-  box-sizing: border-box;
-  font-family: var(--main-font);
-  font-size: var(--font-size);
-  scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: var(--main-font);
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
 }
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 body {
-  margin: 0;
-  overflow-x: hidden;
+    margin: 0;
+    overflow-x: hidden;
 }
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 /*********** titulo */
 .header {
-  position: sticky;
-  top: 0;
-  padding: 0.2rem;
-  background-color: var(--main-color);
-  color: var(--second-color);
+    position: sticky;
+    top: 0;
+    padding: 0.2rem;
+    background-color: var(--main-color);
+    color: var(--second-color);
 }
 .header h1 {
-  padding: 0 auto;
-  text-align: center;
+    padding: 0 auto;
+    text-align: center;
 }
 
 /*********** secciones */
 .section {
-  padding: 2rem;
-  padding-top: 5rem;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: var(--container-width);
-  min-height: 100vh;
-  text-align: center;
-  border: solid 1px var(--second-color);
+    padding: 2rem;
+    padding-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: var(--container-width);
+    min-height: 100vh;
+    text-align: center;
+    border: solid 1px var(--second-color);
 }
 
 .panel {
-  position: fixed;
-  z-index: 8;
-  width: 100%;
-  top: 1vh;
-  bottom: 0;
-  left: 1vh;
-  right: 0;
-  background-color: var(--second-color);
-  /* para hacer que se mueva */
-  opacity: 0;
-  /* visibility: hidden; */
-  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-  transform: translate(0, 100%);
+    position: fixed;
+    z-index: 8;
+    width: 100%;
+    top: 1vh;
+    bottom: 0;
+    left: 1vh;
+    right: 0;
+    background-color: var(--second-color);
+    opacity: 0;
+    overflow-y: auto;
+    /* para hacer que se mueva */
+    /* visibility: hidden; */
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    transform: translate(0, 100%);
 }
 .panel.is-active {
     transform: translate(0, 0);
@@ -77,25 +78,25 @@ img {
 
 /*********** boton hamburguesa */
 button.panel-btn {
-  position: fixed;
-  z-index: 9;
-  bottom: 1vh;
-  right: 1vh;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color:var(--main-color);
+    position: fixed;
+    z-index: 9;
+    bottom: 1vh;
+    right: 1vh;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
 }
-button.panel-btn:hover{
-  background-color: gray;
+button.panel-btn:hover {
+    background-color: gray;
 }
 
 /*********** menu */
-.menu{
+.menu {
     width: inherit;
     display: flex;
     flex-direction: column;
@@ -103,7 +104,7 @@ button.panel-btn:hover{
     align-items: center;
     text-align: center;
 }
-.menu a{
+.menu a {
     width: inherit;
     padding: 2rem;
     display: block;
@@ -112,68 +113,82 @@ button.panel-btn:hover{
     color: var(--main-color);
     transition: all 0.3s ease;
 }
-.menu a:hover{
+.menu a:hover {
     font-weight: bold;
     color: var(--second-color);
     background-color: var(--main-color);
 }
-.stage{
-  display: flex;
-  min-height: 50vh;
-  background-color: var(--second-color);
+.stage {
+    display: flex;
+    min-height: 50vh;
+    background-color: var(--second-color);
 }
-.ball{
-  width: 4rem;
-  height: 4rem;
-  background-color: var(--main-color);
-  border-radius: 50%;
-  margin: auto;
+.ball {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    margin: auto;
 }
 /* boton para volver al inicio */
-.scroll-top{
-  position: fixed;
-  z-index: 9;
-  bottom: 1vh;
-  right: calc(4.25rem + 1vh);
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  background-color: var(--main-color);
-  color: black;
-  cursor: pointer;
-  outline: 0;
-  border: 0;
-  font-size: 2rem;
-  transition: all 0.3s ease-out;
+.scroll-top {
+    position: fixed;
+    z-index: 9;
+    bottom: 1vh;
+    right: calc(4.25rem + 1vh);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    color: black;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    font-size: 2rem;
+    transition: all 0.3s ease-out;
 }
-.scroll-top:hover{
-  background-color: gray;
+.scroll-top:hover {
+    background-color: gray;
 }
-.hidden{
-  visibility: hidden;
-  opacity: 0;
+.hidden {
+    visibility: hidden;
+    opacity: 0;
 }
 /* tema oscuro */
-.dark-theme{
-  position: fixed;
-  z-index: 9;
-  bottom: 1vh;
-  left: calc(1vw);
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  background-color: var(--main-color);
-  color: black;
-  cursor: pointer;
-  outline: 0;
-  border: 0;
-  font-size: 2rem;
-  transition: all 0.3s ease-out;
+.dark-theme {
+    position: fixed;
+    z-index: 9;
+    bottom: 1vh;
+    left: calc(1vw);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    color: black;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    font-size: 2rem;
+    transition: all 0.3s ease-out;
 }
-.dark-theme:hover{
-  background-color: gray;
+.dark-theme:hover {
+    background-color: gray;
 }
-.dark-mode{
-  background-color: black;
-  color: white;
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+.online,
+.offline {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: green;
+    color: white;
+}
+.offline {
+    background-color: red;
 }
