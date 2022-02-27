@@ -192,3 +192,19 @@ button.panel-btn:hover {
 .offline {
     background-color: red;
 }
+/* filtro de busqueda */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.card img {
+    width: 100%;
+    height: auto;
+}
+.filter {
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    /* para que se recorran al final */
+    order: 1;
+}
