@@ -31,6 +31,7 @@ img {
 /*********** titulo */
 .header {
     position: sticky;
+    z-index: 7;
     top: 0;
     padding: 0.2rem;
     background-color: var(--main-color);
@@ -207,4 +208,108 @@ button.panel-btn:hover {
     opacity: 0;
     /* para que se recorran al final */
     order: 1;
+}
+
+/***** Responsive Slider *****/
+.slider {
+    position: relative;
+    width: 90%;
+    margin: 1rem auto;
+    text-align: center;
+    /* background-color: red; */
+}
+.slider-slides {
+    position: relative;
+    height: 400px;
+}
+.slider-slide {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-out;
+}
+.slider-slide img {
+    width: inherit;
+    height: inherit;
+    /* para que las imagenes se adapten al contenedor sin deformarse */
+    object-fit: cover;
+    /* para acomodar el contenido de las imagenes (x, y)*/
+    /* object-position: 50% 50%; */
+}
+.slider-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+.slider-btns {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    padding: 0 1vw;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+}
+.slider a {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(195, 194, 194, 0.25);
+    border-radius: 50%;
+    text-decoration: none;
+    color: gray;
+    transition: all 0.3s ease;
+}
+.slider a:hover {
+    color: white;
+}
+
+/*********** ScrollSpy */
+
+@media screen and (min-width: 1000px) {
+    body {
+        display: grid;
+        grid-template-columns: 80% 20%;
+        grid-template-rows: 4rem auto;
+        grid-template-areas:
+            "header header"
+            "main   panel";
+    }
+    .header {
+        grid-area: header;
+    }
+    .main {
+        grid-area: main;
+    }
+    .panel {
+        grid-area: panel;
+        align-self: start;
+        justify-content: flex-start;
+        position: sticky;
+        top: 4rem;
+        transform: translate(0, 0);
+        opacity: 1;
+        visibility: visible;
+    }
+    button.panel-btn {
+        display: none;
+    }
+    .menu a {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+        text-align: right;
+    }
+    .menu a.active {
+        background-color: var(--main-color);
+        color: var(--second-color);
+        font-weight: bold;
+    }
+    .scroll-top {
+        right: initial;
+        left: calc(4.5rem + 1vh);
+    }
 }
