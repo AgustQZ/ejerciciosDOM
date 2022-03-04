@@ -313,3 +313,8 @@ button.panel-btn:hover {
         left: calc(4.5rem + 1vh);
     }
 }
+
+/* video */
+video {
+    width: 100%;
+}

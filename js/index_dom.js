@@ -14,6 +14,7 @@ import scrollSpy from "./DOM/scoll_spia.js";
 import draw from "./DOM/sorteo.js";
 import { moveBall, shortcuts } from "./DOM/teclado.js";
 import darkTheme from "./DOM/tema-oscuro.js";
+import smartVideo from "./DOM/video_inteligente.js";
 
 const d = document;
 // para hacer que la carga de la funcion se haga al documento correctamente
@@ -43,6 +44,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
     draw("#winner-btn", ".player");
     slider();
     scrollSpy();
+    smartVideo();
 });
 
 d.addEventListener("keydown", (e) => {
