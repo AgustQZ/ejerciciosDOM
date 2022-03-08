@@ -22,7 +22,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
     hamburgerMenu(".panel-btn", ".panel", ".menu a");
     digitalCLock("#reloj", "#activar-reloj", "#desactivar-reloj");
     alarm("assets/alarm.mp3", "#activar-alarma", "#desactivar-alarma");
-    countdown("countdown", "January 20, 2023 18:30:00", "Happy Birthday");
+    countdown("countdown", "May 31, 2022 09:15:00", "Happy Birthday Vale");
     scrollTopButton(".scroll-top");
     responsiveMedia(
         "youtube",
