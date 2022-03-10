@@ -1,15 +1,15 @@
 const d = document,
-w = window;
+    w = window;
 
 export default function scrollTopButton(b) {
     const $scrollBtn = d.querySelector(b);
     // hacer que el boton se muestre a cierta distancia al desplazarse verticalmente
-    w.addEventListener("scroll", (e) => {
+    w.addEventListener("scroll", () => {
         let scrollUp = w.pageYOffset || d.documentElement.scrollTop;
 
-        if (scrollUp > 500 ) {
+        if (scrollUp > 500) {
             $scrollBtn.classList.remove("hidden");
-        }else {
+        } else {
             $scrollBtn.classList.add("hidden");
         }
         // mostrar valor de barra de desplazamiento vertical en window y en el documento
@@ -18,7 +18,7 @@ export default function scrollTopButton(b) {
 
     // darle funcionabilidad para volver al inicio vertical
     d.addEventListener("click", (e) => {
-        if(e.target.matches(b)) {
+        if (e.target.matches(b)) {
             w.scrollTo({
                 behavior: "smooth",
                 top: 0,
