@@ -7,6 +7,7 @@ import webcamConnet from "./DOM/deteccion_webcam.js";
 import filtroBusquda from "./DOM/filtro_busqueda.js";
 import geoLocalizacion from "./DOM/geolocalizacion.js";
 import hamburgerMenu from "./DOM/menu_hamburguesa.js";
+import speechReader from "./DOM/narrador.js";
 import responsiveMedia from "./DOM/objeto_responsive.js";
 import tester from "./DOM/prueba_responsive.js";
 import { digitalCLock, alarm } from "./DOM/reloj.js";
@@ -14,6 +15,7 @@ import scrollSpy from "./DOM/scoll_spia.js";
 import draw from "./DOM/sorteo.js";
 import { moveBall, shortcuts } from "./DOM/teclado.js";
 import darkTheme from "./DOM/tema-oscuro.js";
+import contactFormValidation from "./DOM/validaciones_formulario.js";
 import smartVideo from "./DOM/video_inteligente.js";
 
 const d = document;
@@ -45,6 +47,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
     slider();
     scrollSpy();
     smartVideo();
+    contactFormValidation();
 });
 
 d.addEventListener("keydown", (e) => {
@@ -56,3 +59,5 @@ d.addEventListener("keydown", (e) => {
 darkTheme(".dark-theme", "dark-mode");
 //no necesita cargar con el documento
 networkStatus();
+//al tener un listener adentro no puede ir dentro de otro listener
+speechReader();

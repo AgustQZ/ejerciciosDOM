@@ -39,7 +39,7 @@
             <a href="#seccion12" data-scroll-spy>Responsive Slider</a>
             <a href="#seccion13" data-scroll-spy>Video Inteligente</a>
             <a href="#seccion14" data-scroll-spy>Validacion de Formulario</a>
-            <a href="#seccion15" data-scroll-spy>seccion</a>
+            <a href="#seccion15" data-scroll-spy>Narrador</a>
 
         </nav>
     </span>
@@ -213,16 +213,28 @@
                     pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
                 <input type="text" name="subjet" placeholder="Asunto" title="Se requiere asunto" required>
                 <textarea name="comments" cols="30" rows="5" placeholder="Comentarios" data-pattern="^.{1,255}$"
-                    title="255 caracteres maximos para el comentario"></textarea>
+                    title="Tu comentario solo admite 255 caracteres" required></textarea>
                 <input type="submit" value="Enviar">
-                <div class="contact-form-loader">
-                    <img src="assets/Pulse.svg" alt="Cargando">
+                <div class="contact-form-loader none">
+                    <img src="assets/svg-loaders/puff.svg" alt="Cargando">
+                </div>
+                <div class="contact-form-response none">
+                    <p>Datos enviados exitosamente</p>
                 </div>
             </form>
         </section>
         <!--  -->
         <section id="seccion15" class="section" data-scroll-spy>
-            <h2></h2>
+            <h2>Narrador</h2>
+            <p>Escribe un texto, selecciona un idioma y escucha.</p>
+            <select id="speech-select">
+                <option value="">Elige una voz</option>
+            </select>
+            <br><br>
+            <textarea id="speech-text" cols="50" rows="5"
+                placeholder="Escribe un texto para escucharlo con un narrador"></textarea>
+            <br><br>
+            <button id="speech-btn">Leer texto</button>
         </section>
 
 
