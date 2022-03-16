@@ -6,6 +6,7 @@
     --second-color: #222;
     --main-modal-color: rgba(247, 222, 30, 0.85);
     --second-modal-color: rgba(34, 34, 34, 0.85);
+    --dark-mode: #111b21;
     --container-width: 1200px;
 }
 html {
@@ -63,7 +64,7 @@ img {
     bottom: 0;
     left: 1vh;
     right: 0;
-    background-color: var(--second-color);
+    background-color: var(--dark-mode);
     opacity: 0;
     overflow-y: auto;
     /* para hacer que se mueva */
@@ -176,8 +177,8 @@ button.panel-btn:hover {
     background-color: gray;
 }
 .dark-mode {
-    background-color: black;
-    color: white;
+    background-color: var(--dark-mode);
+    color: #848488;
 }
 .online,
 .offline {
@@ -294,6 +295,7 @@ button.panel-btn:hover {
         transform: translate(0, 0);
         opacity: 1;
         visibility: visible;
+        border: solid thin var(--main-color);
     }
     button.panel-btn {
         display: none;
