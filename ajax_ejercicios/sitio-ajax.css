@@ -1,0 +1,54 @@
+html {
+    box-sizing: border-box;
+    font-family: Nunito, sans-serif;
+    font-size: 16px;
+}
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+main {
+    flex-grow: 1;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+}
+.header {
+    padding: 0.5rem;
+    background-color: antiquewhite;
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo img {
+    width: 3rem;
+    height: auto;
+}
+.menu {
+    /* display: flex;
+    justify-content: space-between; */
+    font-size: 115%;
+}
+.menu a {
+    text-decoration: none;
+    color: chocolate;
+    padding: 0 1vh;
+    transition: all 0.3sg ease-in-out;
+}
+.menu a:hover {
+    opacity: 0.75;
+}
