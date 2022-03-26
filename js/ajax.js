@@ -7,6 +7,7 @@
 
     // 02 asignar evento de la peticion
     xhr.addEventListener("readystatechange", (e) => {
+        // Si la respuesta es diferente de 4, que no retorne nada. Ya que los otros estados no devuelven informacion
         if (xhr.readyState !== 4) return;
 
         if (xhr.status >= 200 && xhr.status < 300) {
