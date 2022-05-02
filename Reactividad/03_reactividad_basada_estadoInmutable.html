@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Reactividad del estado Inmutable</title>
+    </head>
+    <body>
+        <h1>Reactividad del estado Inmutable</h1>
+
+        <form id="to-do-form">
+            <input type="text" id="to-do-item" placeholder="Tarea por hacer" />
+            <input type="submit" value="Agregar" />
+        </form>
+        <h2>Lista de tareas</h2>
+        <ul id="to-do-list"></ul>
+
+        <!-- PROGRAMACION -->
+        <script>
+            // guardar variables
+            const d = document;
+            // estado
+            const state = {
+                todolist: [],
+            };
+            // plantilla o template
+            const template = () => {
+                if (state.todolist.length < 1) {
+                    return `<p>Sin tareas por hacer</p>`;
+                }
+                let toDos = state.todolist
+                    .map((item) => `<li>${item}</li>`)
+                    .join("");
+                return toDos;
+            };
+            // pintar o renderizar
+            const render = () => {
+                console.log(state);
+                $list = d.getElementById("to-do-list");
+                if (!$list) return;
+                $list.innerHTML = template();
+            };
+            // actualizar el estado de manera reactiva
+            const setState = (Object) => {
+                for (const key in Object) {
+                    if (state.hasOwnProperty(key)) {
+                        state[key] = Object[key];
+                    }
+                }
+                render();
+            };
+            //crear una copia para que quede guardada y volverlo INMUTABLE
+            const getState = () => JSON.parse(JSON.stringify(state));
+
+            // cargar el render al cargar la pagina
+            d.addEventListener("DOMContentLoaded", render);
+
+            // evento click en submit
+            d.addEventListener("submit", (event) => {
+                if (!event.target.matches("#to-do-form")) return false;
+                event.preventDefault();
+                $item = d.getElementById("to-do-item");
+                if (!$item) return;
+                // actualizar el estado o los datos de la UI desde la copia
+                const lastState = getState();
+                lastState.todolist.push($item.value);
+                setState({ todolist: lastState.todolist });
+                // nota: setState ya tiene render asi que es innecesario aqui
+
+                // limpiar el input
+                $item.value = "";
+                $item.focus();
+            });
+        </script>
+    </body>
+</html>

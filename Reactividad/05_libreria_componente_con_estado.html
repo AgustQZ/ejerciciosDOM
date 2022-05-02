@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Libreria Componente con estado</title>
+        <script src="Component.js"></script>
+    </head>
+    <body>
+        <h1>Libreria Componente con estado</h1>
+
+        <form id="to-do-form">
+            <input type="text" id="to-do-item" placeholder="Tarea por hacer" />
+            <input type="submit" value="Agregar" />
+        </form>
+        <h2>Lista de tareas</h2>
+        <ul id="to-do-list"></ul>
+
+        <!-- PROGRAMACION -->
+        <script>
+            // guardar variables
+            const d = document,
+                app = new Component({
+                    element: "#to-do-list",
+                    data: {
+                        todolist: [],
+                    },
+                    template: function (propieties) {
+                        // referenciar al estado local
+                        if (propieties.todolist.length < 1) {
+                            return `<p>Sin tareas por hacer</p>`;
+                        }
+                        let toDos = propieties.todolist
+                            .map((item) => `<li>${item}</li>`)
+                            .join("");
+                        return toDos;
+                    },
+                });
+
+            // cargar el render al cargar la pagina
+            d.addEventListener("DOMContentLoaded", app.render);
+
+            // evento click en submit
+            d.addEventListener("submit", (event) => {
+                if (!event.target.matches("#to-do-form")) return false;
+                event.preventDefault();
+                $item = d.getElementById("to-do-item");
+                if (!$item) return;
+                // actualizar el estado o los datos de la UI desde la copia
+                const lastState = app.getState();
+                lastState.todolist.push($item.value);
+                app.setState({ todolist: lastState.todolist });
+                // nota: setState ya tiene render asi que es innecesario aqui
+
+                // limpiar el input
+                $item.value = "";
+                $item.focus();
+            });
+        </script>
+    </body>
+</html>
